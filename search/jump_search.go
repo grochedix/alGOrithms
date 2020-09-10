@@ -12,7 +12,7 @@ func jumpSearch(arr []int, x int) int {
 		step += math.Floor(math.Sqrt(n))
 	}
 	for pos := int(math.Min(step, n-1)); arr[pos] >= x; pos-- {
-		if arr[pos] == x {
+		if arr[pos] == x && (pos == 0 || arr[pos-1] != x) {
 			return pos
 		}
 		if pos == int(step-math.Floor(math.Sqrt(n))) {
